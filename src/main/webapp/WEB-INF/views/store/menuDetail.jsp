@@ -6,13 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/resources/css/login.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="/resources/css/form.css">
 </head>
 <body>
+<jsp:include page="../header.jsp" flush="false" />
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="login-form">
@@ -43,9 +40,9 @@
 					</div>
 
 					<div class="form-group">
-						<label for="image">이미지</label> <img src="a/a/a/a/a">
+						<label for="image">이미지</label>
+						<img src="/user/display?fileName=${menu.uploadPath}/s_${menu.uuid}_${menu.fileName}">
 					</div>
-
 
 					 <input type="submit" value="메뉴수정"></input>
 						<a href="/store/menuList"> <input type="button" value="돌아가기"></input>
@@ -54,6 +51,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			//저장하기 버튼(저장하기 기능 작동)

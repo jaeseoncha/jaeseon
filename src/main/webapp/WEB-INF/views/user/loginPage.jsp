@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login Page~~</title>
-<link rel="stylesheet" href="/resources/css/login.css">
+<link rel="stylesheet" href="/resources/css/form.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -33,13 +33,18 @@
 							class="login-input" id="password" name="password"
 							placeholder="비밀번호를 입렵해주세요">
 					</div>
-					<input type="submit" value="로그인"></input> 
-					<input type="submit" value="회원가입"></input>
+					<input type="submit" value="로그인"></input> 			
 				</form>
+				<input type="submit" value="회원가입" id="register-button" onClick="newPage()"></input>
 			</div>
 		</div>
 	</div>
-
+<script>
+function newPage()  {
+	console.log("ddd");
+	  window.location.href = '/user/register';
+	}
+</script>
 
 </body>
 </html>

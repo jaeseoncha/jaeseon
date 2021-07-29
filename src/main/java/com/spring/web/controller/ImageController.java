@@ -43,12 +43,13 @@ public class ImageController {
 	@ResponseBody
 	public ResponseEntity<List<ImageVO>> uploadAjaxAction(MultipartFile[] uploadFile) {
 		System.out.println("uploadAjaxAction");
-		String uploadFolder = "C:\\Users\\subin\\Desktop\\upload";
+		String uploadFolder = "/Users/chajaeseon/Desktop/upload";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
 		System.out.println("str:" + str);
 		String datePath = str.replace("-", File.separator);
+		//File.separator로 하니까 역슬래시 나와서 파일이 생성이 안됨 
 		System.out.println("datePath:" + datePath);
 
 		File uploadPath = new File(uploadFolder, datePath);
@@ -128,7 +129,7 @@ public class ImageController {
 
 		System.out.println("파일 이름 : " + fileName);
 
-		File file =new File("C:\\Users\\subin\\Desktop\\upload\\"+fileName);
+		File file =new File("/Users/chajaeseon/Desktop/upload/"+fileName);
 
 
 		ResponseEntity<byte[]> result = null;
@@ -156,7 +157,7 @@ public class ImageController {
 		File file=null;
 		try {
 
-			file= new File("C:\\Users\\subin\\Desktop\\upload\\"+ URLDecoder.decode(fileName,"UTF-8"));
+			file= new File("/Users/chajaeseon/Desktop/upload/"+ URLDecoder.decode(fileName,"UTF-8"));
 			System.out.println(file);
 			file.delete();
 

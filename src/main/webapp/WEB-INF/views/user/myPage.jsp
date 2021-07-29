@@ -6,14 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>myPage</title>
-<link rel="stylesheet" href="/resources/css/login.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="/resources/css/form.css">
 </head>
 <body>
-	<jsp:include page="../top-var.jsp" flush="false" />
+	<jsp:include page="../header.jsp" flush="false" />
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="login-form">
@@ -50,9 +46,17 @@
 					<div class="form-group">
 						<label for="role">역할</label>
 						<div class="login-input">
+						<c:if test="${user.role == 1}">
+							<input type="radio" disabled="true" name="role" id="role"
+								value="User"> 고객 <input type="radio"
+								name="role" id="role" value="Admin" checked="checked">사장님
+						</c:if>
+							<c:if test="${user.role == 0}">
 							<input type="radio" disabled="true" name="role" id="role"
 								value="User" checked="checked"> 고객 <input type="radio"
-								name="role" id="role" value="Admin">사장님
+								name="role" id="role" value="Admin" >사장님
+						</c:if>
+						
 						</div>
 
 					</div>

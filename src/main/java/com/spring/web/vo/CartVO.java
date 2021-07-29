@@ -11,6 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class CartVO {
 	private int id;
-	private int store_id;
+	private int user_id;
 	private int menu_id;
+	private int count;
 }
